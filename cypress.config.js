@@ -2,6 +2,7 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   e2e: {
+    experimentalRunAllSpecs: true,
     baseUrl: 'http://localhost',
     env: {
       hideCredentials: true,
