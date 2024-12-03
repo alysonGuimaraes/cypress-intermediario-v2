@@ -68,3 +68,15 @@ Cypress.Commands.add('gui_createIssue', (issue) => {
 
   cy.get('.append-right-10 > .btn').click()
 })
+
+Cypress.Commands.add('gui_setLabelOnIssue', label => {
+  cy.get('.qa-edit-link-labels').click()
+  cy.contains(label.name).click()
+  cy.get('body').click()
+})
+
+Cypress.Commands.add('gui_setMilestoneOnIssue', mileStone => {
+  cy.get('.milestone > .title > .js-sidebar-dropdown-toggle').click()
+  cy.contains(mileStone.title).click()
+  cy.get('body').click()
+})
